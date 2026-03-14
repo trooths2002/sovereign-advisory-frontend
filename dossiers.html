@@ -121,6 +121,10 @@
             font-size: 0.86rem;
             line-height: 1.5;
         }
+        .asset-card a {
+            color: var(--text-main);
+            text-decoration: underline;
+        }
         .engine-block {
             border: 1px solid var(--border);
             padding: 20px;
@@ -178,34 +182,22 @@
 
             <section>
                 <h2>Intelligence Assets</h2>
-                <div class="cards">
+                <div class="cards" id="intel-feed">
                     <article class="asset-card">
-                        <div class="asset-tag">Recent Dossier / 01</div>
-                        <h3>Mombasa Port Infrastructure Risk</h3>
+                        <div class="asset-tag">Public Dossier / 01</div>
+                        <h3>Angola Expands Lobito Rail</h3>
                         <ul>
-                            <li>Container chokepoints and rail dependency stress across the northern corridor.</li>
-                            <li>Exposure vector: customs latency, insurance drag, and inland freight volatility.</li>
-                            <li>Decision use: logistics pricing, capital allocation, and route resilience planning.</li>
+                            <li>Signal: Loading model... , , , ▄▄ ▄▄, ██ ██, ██ ██ ▀▀█▄ ███▄███▄ ▀▀█▄ ▄████ ████▄ ████▄, ██ ██ ▄█▀██ ██ ██ ██ ▄█▀██ ██ ██ ██ ██ ██, ██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀, ██ ██, ▀▀ ▀▀, , build : b8300-f2ab047f2, model : qwen2.5-1.5b-instruct-q4_k_m.gguf, modalities : text, , available commands:, /...</li>
+                            <li>Status: Pending Review | Source File: News_SMOKE_TEST.csv</li>
+                            <li><a href="https://example.com/angola" target="_blank" rel="noreferrer">Open Source Link</a></li>
                         </ul>
                     </article>
-
-                    <article class="asset-card">
-                        <div class="asset-tag">Recent Dossier / 02</div>
-                        <h3>Gulf of Guinea Logistics Assessment</h3>
+                </div>
+                        <h3>Public Authority Feed Waiting For Local BWN Report</h3>
                         <ul>
-                            <li>Energy, maritime security, and port modernization viewed as one operating theater.</li>
-                            <li>Exposure vector: cargo delays, private security cost inflation, and terminal concentration.</li>
-                            <li>Decision use: shipping strategy, risk budgeting, and coastal asset prioritization.</li>
-                        </ul>
-                    </article>
-
-                    <article class="asset-card">
-                        <div class="asset-tag">Recent Dossier / 03</div>
-                        <h3>Lobito Corridor Mineral Export Brief</h3>
-                        <ul>
-                            <li>Rail expansion and Atlantic routing reposition mineral flows toward higher-efficiency exits.</li>
-                            <li>Exposure vector: corridor financing, regional politics, and throughput scaling constraints.</li>
-                            <li>Decision use: critical minerals intelligence, infrastructure watchlists, and trade timing.</li>
+                            <li>The sync engine will replace this placeholder with the latest intelligence cards.</li>
+                            <li>Trigger: Sync_Public_Feed.ps1 after BWN markdown generation.</li>
+                            <li>Deployment: GitHub Pages publish executes automatically after injection.</li>
                         </ul>
                     </article>
                 </div>
