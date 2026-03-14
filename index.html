@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Advisory | Strategic Intelligence</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --surface-color: #111111;
+            --text-main: #F3F3F3;
+            --text-muted: #888888;
+            --accent: #FFFFFF;
+            --border: #333333;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: var(--surface-color);
+            padding: 40px;
+            border: 1px solid var(--border);
+        }
+        h1 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+        }
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        input, textarea {
+            width: 100%;
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 12px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        input:focus, textarea:focus { border-color: var(--accent); }
+        textarea { resize: vertical; min-height: 100px; }
+        button {
+            width: 100%;
+            background: var(--text-main);
+            color: var(--bg-color);
+            border: none;
+            padding: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        button:hover {
+            background: var(--text-muted);
+            color: var(--text-main);
+        }
+        .status-msg {
+            margin-top: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sovereign Advisory</h1>
+        <p class="subtitle">Institutional-grade strategic consulting. Enter your details and project scope below. Our systems will triage your request immediately.</p>
+        
+        <form id="advisory-form">
+            <label for="name">Lead Name / Organization</label>
+            <input type="text" id="name" required placeholder="e.g., Institutional Capital Corp">
+
+            <label for="email">Secure Comm Link (Email)</label>
+            <input type="email" id="email" required placeholder="director@firm.com">
+
+            <label for="project">Project Scope / Directive</label>
+            <textarea id="project" required placeholder="Describe the AUM, geographic focus, and intelligence requirements..."></textarea>
+
+            <button type="submit" id="submit-btn">Transmit Request</button>
+            <div id="status" class="status-msg"></div>
+        </form>
+    </div>
+
+    <script>
+        // --- DEPLOYMENT CONFIGURATION ---
+        // Replace this URL with your active n8n loca.lt tunnel Webhook URL
+        const N8N_WEBHOOK_URL = "http://localhost:5678/webhook-test/advisory-intake";
+
+        document.getElementById('advisory-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const status = document.getElementById('status');
+            
+            btn.innerText = 'TRANSMITTING...';
+            btn.disabled = true;
+            status.innerText = '';
+            status.style.color = 'var(--text-muted)';
+
+            const payload = {
+                Name: document.getElementById('name').value,
+                Email: document.getElementById('email').value,
+                "Project Description": document.getElementById('project').value
+            };
+
+            try {
+                const response = await fetch(N8N_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    btn.innerText = 'TRANSMISSION SECURED';
+                    btn.style.background = '#333';
+                    btn.style.color = '#fff';
+                    status.innerText = 'Intelligence received. You will be contacted shortly.';
+                    status.style.color = '#00ff00';
+                    document.getElementById('advisory-form').reset();
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            } catch (err) {
+                console.error(err);
+                btn.innerText = 'TRANSMISSION FAILED';
+                btn.disabled = false;
+                status.innerText = 'Error connecting to secure node. Verify tunnel.';
+                status.style.color = '#ff3333';
+            }
+        });
+    </script>
+</body>
+</html>
