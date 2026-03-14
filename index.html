@@ -90,6 +90,19 @@
             font-size: 0.8rem;
             text-align: center;
         }
+        .nav-link {
+            display: inline-block;
+            margin-top: 22px;
+            color: var(--text-main);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 10px 12px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .nav-link:hover {
+            border-color: var(--accent);
+        }
     </style>
 </head>
 <body>
@@ -111,6 +124,8 @@
             <button type="submit" id="submit-btn">Transmit Request</button>
             <div id="status" class="status-msg"></div>
         </form>
+
+        <a class="nav-link" href="./dossiers.html">[INTEL_DOSSIERS]</a>
     </div>
 
     <script>
