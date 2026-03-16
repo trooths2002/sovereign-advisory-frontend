@@ -3,250 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Intelligence Feed | Afrodescendant Ali</title>
+    <title>Black World News | Strategic Assets | Public Dossier Sync</title>
     <style>
         :root {
-            --bg-color: #050505;
-            --surface-color: #111111;
-            --text-main: #F3F3F3;
-            --text-muted: #888888;
-            --accent: #FFFFFF;
-            --border: #333333;
+            --bg: #000000;
+            --surface: #070707;
+            --surface-2: #0d0d0d;
+            --line: #242424;
+            --line-strong: #3a3a3a;
+            --text: #f5f5f5;
+            --muted: #8a8a8a;
+            --accent: #d7d7d7;
+            --signal: #ffffff;
+            --warn: #c9a227;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            background: var(--bg);
+            color: var(--text);
+        }
+
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
             min-height: 100vh;
-            padding: 20px;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0) 180px),
+                var(--bg);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 24px;
         }
+
         .shell {
-            width: 100%;
-            max-width: 1180px;
+            width: min(1400px, 100%);
             margin: 0 auto;
-            background: var(--surface-color);
-            border: 1px solid var(--border);
+            border: 1px solid var(--line-strong);
+            background: var(--surface);
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
         }
-        header, section, footer {
+
+        .masthead,
+        .status-bar,
+        .footer {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .masthead {
             padding: 32px;
-            border-bottom: 1px solid var(--border);
-        }
-        footer {
-            border-bottom: 0;
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .eyebrow {
-            color: var(--text-muted);
-            font-size: 0.78rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-        h1, h2 {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        h1 {
-            font-size: clamp(1.8rem, 4vw, 3.5rem);
-            line-height: 0.95;
-            margin-bottom: 16px;
-        }
-        h2 {
-            font-size: 1rem;
-            margin-bottom: 18px;
-        }
-        p {
-            color: var(--text-muted);
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-        .nav-link {
-            display: inline-block;
-            color: var(--text-main);
-            text-decoration: none;
-            border: 1px solid var(--border);
-            padding: 10px 12px;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            margin-top: 22px;
-        }
-        .nav-link:hover {
-            border-color: var(--accent);
-        }
-        .grid {
             display: grid;
-            grid-template-columns: 1.15fr 1fr;
+            gap: 18px;
         }
-        .grid section:first-child {
-            border-right: 1px solid var(--border);
+
+        .eyebrow,
+        .meta,
+        .card-region,
+        .summary-label,
+        .details-toggle summary,
+        .source-link,
+        .footer {
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
         }
-        .cards {
+
+        .eyebrow {
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4.2rem);
+            line-height: 0.95;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            max-width: 12ch;
+        }
+
+        .subhead {
+            max-width: 70ch;
+            color: var(--accent);
+            line-height: 1.65;
+            font-size: 1rem;
+        }
+
+        .status-bar {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
+            gap: 1px;
+            background: var(--line);
         }
-        .asset-card {
-            border: 1px solid var(--border);
-            padding: 18px;
-            background: #0a0a0a;
-            min-height: 260px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
+
+        .status-cell {
+            background: var(--surface-2);
+            padding: 14px 16px;
+            min-height: 76px;
+            display: grid;
+            gap: 8px;
         }
-        .asset-tag {
-            color: var(--text-muted);
+
+        .meta {
+            color: var(--muted);
             font-size: 0.72rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
         }
-        .asset-card h3 {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.3;
+
+        .status-value {
+            font-size: 0.95rem;
+            color: var(--text);
         }
-        .asset-card ul {
-            list-style: none;
+
+        .intel-grid {
             display: grid;
-            gap: 10px;
-            color: var(--text-muted);
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.86rem;
-            line-height: 1.5;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1px;
+            background: var(--line);
         }
-        .asset-card a {
-            color: var(--text-main);
-            text-decoration: underline;
-        }
-        .engine-block {
-            border: 1px solid var(--border);
-            padding: 20px;
-            background: #0a0a0a;
-        }
-        .engine-list {
-            list-style: none;
-            margin-top: 16px;
+
+        .intel-card {
+            background: var(--surface-2);
+            padding: 22px;
+            min-height: 340px;
             display: grid;
+            gap: 16px;
+            align-content: start;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
             gap: 12px;
+            align-items: baseline;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 12px;
+        }
+
+        .card-index {
             font-family: 'Courier New', Courier, monospace;
-            font-size: 0.88rem;
-            color: var(--text-main);
+            color: var(--muted);
+            font-size: 0.76rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
-        .engine-list span {
-            color: var(--text-muted);
-            margin-right: 8px;
+
+        .card-region {
+            color: var(--signal);
+            font-size: 0.72rem;
         }
-        @media (max-width: 980px) {
-            .grid {
+
+        .intel-card h2 {
+            font-size: 1.15rem;
+            line-height: 1.35;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .briefing {
+            color: var(--accent);
+            line-height: 1.72;
+            font-size: 0.95rem;
+        }
+
+        .summary-label {
+            color: var(--muted);
+            font-size: 0.72rem;
+            margin-bottom: 6px;
+        }
+
+        .details-toggle {
+            border-top: 1px solid var(--line);
+            padding-top: 14px;
+        }
+
+        .details-toggle summary {
+            cursor: pointer;
+            color: var(--signal);
+            font-size: 0.76rem;
+            list-style: none;
+        }
+
+        .details-toggle summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .details-toggle summary::before {
+            content: '[+] ';
+            color: var(--warn);
+        }
+
+        .details-toggle[open] summary::before {
+            content: '[-] ';
+        }
+
+        .prompt-box {
+            margin-top: 12px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            background: #040404;
+            color: var(--accent);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.82rem;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            border-top: 1px solid var(--line);
+            padding-top: 14px;
+        }
+
+        .source-link {
+            color: var(--signal);
+            font-size: 0.76rem;
+            text-decoration: none;
+            border-bottom: 1px solid var(--signal);
+            padding-bottom: 2px;
+        }
+
+        .source-link:hover {
+            color: var(--warn);
+            border-color: var(--warn);
+        }
+
+        .source-state {
+            color: var(--muted);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.74rem;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            padding: 18px 24px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            border-bottom: 0;
+        }
+
+        @media (max-width: 760px) {
+            body {
+                padding: 12px;
+            }
+
+            .masthead {
+                padding: 22px;
+            }
+
+            .status-bar {
                 grid-template-columns: 1fr;
             }
-            .grid section:first-child {
-                border-right: 0;
-                border-bottom: 1px solid var(--border);
-            }
-            .cards {
-                grid-template-columns: 1fr;
+
+            .footer {
+                padding: 16px 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="shell">
-        <header>
-            <div class="eyebrow">Strategic Intelligence Feed</div>
-            <h1>Africa News Digest Dossiers</h1>
-            <p>Structured from the Africa News Digest automation logic: ingestion, triage, local summarization, and synthesis into decision-grade dossiers for logistics, infrastructure, and institutional operators.</p>
-            <a class="nav-link" href="./index.html">[RETURN_TO_INTAKE]</a>
+        <header class="masthead">
+            <div class="eyebrow">BLACK WORLD NEWS // STRATEGIC ASSETS // PUBLIC DOSSIER SYNC</div>
+            <h1>BLACK WORLD NEWS // STRATEGIC ASSETS // PUBLIC DOSSIER SYNC</h1>
+            <p class="subhead">Live automated intelligence feed parsing Pan-Atlantic capital flows and supply-chain logistics.</p>
         </header>
 
-        <div class="grid">
-            <section>
-                <h2>The Insight Engine</h2>
-                <div class="engine-block">
-                    <p>The Automated Geopolitical Triage system monitors Africa-facing developments, compresses raw reporting into signal-first summaries, and promotes only the highest-value themes into strategic narrative assets. The result is a disciplined feed built for operators, allocators, and advisory principals who need fast clarity without newsroom noise.</p>
-                    <ul class="engine-list">
-                        <li><span>01</span>Ingests Africa News Digest items from the workflow chain.</li>
-                        <li><span>02</span>Runs local LLM summarization to flatten article sprawl into institutional signal.</li>
-                        <li><span>03</span>Surfaces corridor risk, port vulnerability, and sovereign infrastructure movement.</li>
-                        <li><span>04</span>Frames each output as a reusable advisory primitive for boardroom action.</li>
-                    </ul>
-                </div>
-            </section>
+        <section class="status-bar" aria-label="Feed status">
+            <div class="status-cell">
+                <div class="meta">Source Layer</div>
+                <div class="status-value">BWN PASV Markdown Reports</div>
+            </div>
+            <div class="status-cell">
+                <div class="meta">Update Method</div>
+                <div class="status-value">Local PowerShell Injection / Zero Dependency</div>
+            </div>
+            <div class="status-cell">
+                <div class="meta">Publishing Posture</div>
+                <div class="status-value">Static HTML Track Record / Public Authority Surface</div>
+            </div>
+        </section>
 
-            <section>
-                <h2>Intelligence Assets</h2>
-                <div class="cards" id="intel-feed">
-                    <article class="asset-card">
-                        <div class="asset-tag">Public Dossier / 01</div>
-                        <h3>Angola Expands Lobito Rail</h3>
-                        <ul>
-                            <li>Signal: Loading model... , , , ▄▄ ▄▄, ██ ██, ██ ██ ▀▀█▄ ███▄███▄ ▀▀█▄ ▄████ ████▄ ████▄, ██ ██ ▄█▀██ ██ ██ ██ ▄█▀██ ██ ██ ██ ██ ██, ██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀, ██ ██, ▀▀ ▀▀, , build : b8300-f2ab047f2, model : qwen2.5-1.5b-instruct-q4_k_m.gguf, modalities : text, , available commands:, /...</li>
-                            <li>Status: Pending Review | Source File: News_SMOKE_TEST.csv</li>
-                            <li><a href="https://example.com/angola" target="_blank" rel="noreferrer">Open Source Link</a></li>
-                        </ul>
-                    </article>
-                </div>
-                        <h3>Angola Expands Lobito Rail</h3>
-                        <ul>
-                            <li>Signal: Loading model... , , , ▄▄ ▄▄, ██ ██, ██ ██ ▀▀█▄ ███▄███▄ ▀▀█▄ ▄████ ████▄ ████▄, ██ ██ ▄█▀██ ██ ██ ██ ▄█▀██ ██ ██ ██ ██ ██, ██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀, ██ ██, ▀▀ ▀▀, , build : b8300-f2ab047f2, model : qwen2.5-1.5b-instruct-q4_k_m.gguf, modalities : text, , available commands:, /...</li>
-                            <li>Status: Pending Review | Source File: News_SMOKE_TEST.csv</li>
-                            <li><a href="https://example.com/angola" target="_blank" rel="noreferrer">Open Source Link</a></li>
-                        </ul>
-                    </article>
-                </div>
-                        <h3>Angola Expands Lobito Rail</h3>
-                        <ul>
-                            <li>Signal: Loading model... , , , ▄▄ ▄▄, ██ ██, ██ ██ ▀▀█▄ ███▄███▄ ▀▀█▄ ▄████ ████▄ ████▄, ██ ██ ▄█▀██ ██ ██ ██ ▄█▀██ ██ ██ ██ ██ ██, ██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀, ██ ██, ▀▀ ▀▀, , build : b8300-f2ab047f2, model : qwen2.5-1.5b-instruct-q4_k_m.gguf, modalities : text, , available commands:, /...</li>
-                            <li>Status: Pending Review | Source File: News_SMOKE_TEST.csv</li>
-                            <li><a href="https://example.com/angola" target="_blank" rel="noreferrer">Open Source Link</a></li>
-                        </ul>
-                    </article>
-                </div>
-                        <h3>Angola Expands Lobito Rail</h3>
-                        <ul>
-                            <li>Signal: Loading model... , , , ▄▄ ▄▄, ██ ██, ██ ██ ▀▀█▄ ███▄███▄ ▀▀█▄ ▄████ ████▄ ████▄, ██ ██ ▄█▀██ ██ ██ ██ ▄█▀██ ██ ██ ██ ██ ██, ██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀, ██ ██, ▀▀ ▀▀, , build : b8300-f2ab047f2, model : qwen2.5-1.5b-instruct-q4_k_m.gguf, modalities : text, , available commands:, /...</li>
-                            <li>Status: Pending Review | Source File: News_SMOKE_TEST.csv</li>
-                            <li><a href="https://example.com/angola" target="_blank" rel="noreferrer">Open Source Link</a></li>
-                        </ul>
-                    </article>
-                </div>
-                        <h3>Angola Expands Lobito Rail</h3>
-                        <ul>
-                            <li>Signal: Loading model... , , , ▄▄ ▄▄, ██ ██, ██ ██ ▀▀█▄ ███▄███▄ ▀▀█▄ ▄████ ████▄ ████▄, ██ ██ ▄█▀██ ██ ██ ██ ▄█▀██ ██ ██ ██ ██ ██, ██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀, ██ ██, ▀▀ ▀▀, , build : b8300-f2ab047f2, model : qwen2.5-1.5b-instruct-q4_k_m.gguf, modalities : text, , available commands:, /...</li>
-                            <li>Status: Pending Review | Source File: News_SMOKE_TEST.csv</li>
-                            <li><a href="https://example.com/angola" target="_blank" rel="noreferrer">Open Source Link</a></li>
-                        </ul>
-                    </article>
-                </div>
-                        <h3>Angola Expands Lobito Rail</h3>
-                        <ul>
-                            <li>Signal: Loading model... , , , ▄▄ ▄▄, ██ ██, ██ ██ ▀▀█▄ ███▄███▄ ▀▀█▄ ▄████ ████▄ ████▄, ██ ██ ▄█▀██ ██ ██ ██ ▄█▀██ ██ ██ ██ ██ ██, ██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀, ██ ██, ▀▀ ▀▀, , build : b8300-f2ab047f2, model : qwen2.5-1.5b-instruct-q4_k_m.gguf, modalities : text, , available commands:, /...</li>
-                            <li>Status: Pending Review | Source File: News_SMOKE_TEST.csv</li>
-                            <li><a href="https://example.com/angola" target="_blank" rel="noreferrer">Open Source Link</a></li>
-                        </ul>
-                    </article>
-                </div>
-                        <h3>Public Authority Feed Waiting For Local BWN Report</h3>
-                        <ul>
-                            <li>The sync engine will replace this placeholder with the latest intelligence cards.</li>
-                            <li>Trigger: Sync_Public_Feed.ps1 after BWN markdown generation.</li>
-                            <li>Deployment: GitHub Pages publish executes automatically after injection.</li>
-                        </ul>
-                    </article>
-                </div>
-            </section>
-        </div>
+        <section class="intel-grid" id="intel-feed">
+            <!-- INTEL_FEED_INJECT -->
+  <article class="intel-card">
+    <div class="card-header">
+      <div class="card-index">DOSSIER 01</div>
+      <div class="card-region">News_SMOKE_TEST.csv</div>
+    </div>
+    <h2>Angola Expands Lobito Rail</h2>
+    <div><div class="summary-label">Briefing Note</div>
+    <p class="briefing">Pending Review</p></div>
+    <details class="details-toggle"><summary>View Image Spec</summary>
+    <pre class="prompt-box">Loading model... , , , ▄▄ ▄▄, ██ ██, ██ ██ ▀▀█▄ ███▄███▄ ▀▀█▄ ▄████ ████▄ ████▄, ██ ██ ▄█▀██ ██ ██ ██ ▄█▀██ ██ ██ ██ ██ ██, ██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀, ██ ██, ▀▀ ▀▀, , build : b8300-f2ab047f2, model : qwen2.5-1.5b-instruct-q4_k_m.gguf, modalities : text, , available commands:, /exit or Ctrl+C stop or exit, /regen regenerate the last response, /clear clear the chat history, /read add a text file, , , &gt; You are formatting one Black World News (BWN) markdown table data row., , Input structure:, ROW: &lt;number&gt;, HEADLINE: &lt;headline text&gt;, SUMMARY: &lt;summary text&gt;, SOURCE_LINK: &lt;url&gt;, , Return EXACTLY ONE markdown table DATA ROW and nothing else., , Output format:, &lt;ROW&gt; &lt;Region&gt; &lt;Headline&gt; &lt;Image Spec (Prompt)&gt; &lt;Briefing Note&gt; &lt;Source Link&gt; , , Hard rules:, - Output exactly one line., - Do NOT output a header row., - Do NOT output a separator row., - Do NOT echo the input., - Do NOT add commentary., - ... (truncated), , 9 Angola Expansion of rail for mineral exports Lobito rail expansion, mineral export logistics, Atlantic trade routing, institutional geopolitical layout Angola&#39;s increased rail capacity enhances logistics for mineral exports to Atlantic ports, boosting regional trade and stability. Diaspora Lever: strengthening regional infrastructure https://example.com/angola, , Exiting...</pre></details>
+    <div class="card-footer">
+      <span class="source-state">ROW 1</span>
+      <a class="source-link" href="https://example.com/angola" target="_blank" rel="noreferrer">SOURCE LINK</a>
+    </div>
+  </article>
+  
+  
+        </section>
 
-        <footer>
-            <span>Afrodescendant Ali | Strategic Intelligence</span>
-            <span>Institutional feed built for geopolitical operators.</span>
+        <footer class="footer">
+            <span>Institutional terminal aesthetic. No frameworks. No external dependencies.</span>
+            <span>Public dossier surface for Pan-Atlantic intelligence outputs.</span>
         </footer>
     </div>
 </body>
