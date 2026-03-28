@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Sovereign Intelligence Artifact</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000101',
+                        secondary: '#745b22',
+                        surface: '#faf9f4',
+                        'on-surface-variant': '#44474a',
+                        'outline-variant': '#c5c6ca',
+                        'surface-container-low': '#f5f4ef',
+                        'surface-container-high': '#e9e8e3',
+                        'surface-container-highest': '#e3e3de',
+                        'secondary-container': '#fedb95',
+                        'on-secondary-container': '#785f25',
+                    },
+                    fontFamily: {
+                        headline: ['Newsreader', 'serif'],
+                        body: ['Manrope', 'sans-serif'],
+                        label: ['Public Sans', 'sans-serif'],
+                    },
+                    borderRadius: { 'DEFAULT': '0px' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+
+<div class="artifact-container">
+    <!-- Hero Section -->
+    <section class="relative min-h-[700px] flex items-center px-12 py-32 bg-surface-container-low overflow-hidden border-b border-outline-variant/10">
+        <div class="absolute right-0 top-0 w-2/5 h-full opacity-[0.03] pointer-events-none">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYrKYpQbjG2U_Ti7hu5_f9ctT513RuUS6WOI7BkUiAYoX8hjpIR30sHgitNyyvwgXTgrJh_qo-y_npRYmWnaWFlY7pWHPXdgBbBFMc7rlXFizMqNNPvQ2oql0idw4VRc8SNqLs3zpHOIt0qi2yyrL9smyCpTgXNrGX0_W1UWW4ezfcwDeZL_Rk3fZFY_uoPGlO0Ky4nywYtqCEcPunsGwv3IWGhBb16Tgc_DS-40Zwq0fEZL5xI80I54vIZqpkLOi5jigMo6OTTn0" 
+                 alt="minimalist technical topographical map abstraction" class="w-full h-full object-cover grayscale mix-blend-multiply">
+        </div>
+        <div class="max-w-4xl relative z-10">
+            <p class="sans-label text-secondary text-[10px] uppercase tracking-[0.4em] mb-8">Contact</p>
+            <h1 class="serif-display text-5xl md:text-7xl lg:text-8xl text-primary leading-[1.05] mb-8 font-light tight-headline">
+                Institutional Contact <br/>& Briefing Requests
+            </h1>
+            <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-2xl mb-16 font-light">
+                Use the contact page to request a briefing, discuss advisory support, make a media inquiry, or connect on institutional matters related to Sovereign Intelligence’s regional intelligence platform.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6">
+                <button class="bg-primary text-on-primary px-10 py-5 sans-label text-[11px] uppercase tracking-[0.2em] hover:bg-secondary transition-all duration-300">
+                    Request a Briefing
+                </button>
+                <button class="border border-outline-variant px-10 py-5 sans-label text-[11px] uppercase tracking-[0.2em] hover:bg-surface-container-high transition-all duration-300">
+                    Explore Intelligence
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Paths -->
+    <section class="bg-surface px-12 py-24 border-b border-outline-variant/10 text-left">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/20 border border-outline-variant/20">
+            <div class="bg-surface p-12 flex flex-col justify-between min-h-[320px]">
+                <div>
+                    <h3 class="serif-display text-2xl mb-6">Briefing Requests</h3>
+                    <p class="text-on-surface-variant leading-relaxed text-sm font-light">Formal intelligence assessments for executive decision-makers and boards.</p>
+                </div>
+                <a class="sans-label text-[10px] text-secondary mt-12 hover:text-primary transition-colors border-b border-secondary/20 pb-1 w-fit" href="#form">Initiate Request →</a>
+            </div>
+            <div class="bg-surface p-12 flex flex-col justify-between min-h-[320px]">
+                <div>
+                    <h3 class="serif-display text-2xl mb-6">Advisory Inquiries</h3>
+                    <p class="text-on-surface-variant leading-relaxed text-sm font-light">Engagement requests for strategic consulting and corridor analysis.</p>
+                </div>
+                <a class="sans-label text-[10px] text-secondary mt-12 hover:text-primary transition-colors border-b border-secondary/20 pb-1 w-fit" href="#form">Initiate Request →</a>
+            </div>
+            <div class="bg-surface p-12 flex flex-col justify-between min-h-[320px]">
+                <div>
+                    <h3 class="serif-display text-2xl mb-6">Media Inquiries</h3>
+                    <p class="text-on-surface-variant leading-relaxed text-sm font-light">Official requests for commentary and regional data validation.</p>
+                </div>
+                <a class="sans-label text-[10px] text-secondary mt-12 hover:text-primary transition-colors border-b border-secondary/20 pb-1 w-fit" href="#form">Initiate Request →</a>
+            </div>
+            <div class="bg-surface p-12 flex flex-col justify-between min-h-[320px]">
+                <div>
+                    <h3 class="serif-display text-2xl mb-6">Institutional Requests</h3>
+                    <p class="text-on-surface-variant leading-relaxed text-sm font-light">Formal diplomatic communications and corporate partnership matters.</p>
+                </div>
+                <a class="sans-label text-[10px] text-secondary mt-12 hover:text-primary transition-colors border-b border-secondary/20 pb-1 w-fit" href="#form">Initiate Request →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Thresholds -->
+    <section class="bg-surface-container-lowest px-12 py-32 grid grid-cols-1 md:grid-cols-12 gap-20">
+        <div class="md:col-span-4 flex flex-col justify-start">
+            <h2 class="serif-display text-4xl leading-tight mb-8">Strategic Thresholds <br/>for Engagement</h2>
+            <div class="h-[1px] w-12 bg-secondary/50"></div>
+        </div>
+        <div class="md:col-span-8 space-y-16">
+            <p class="text-xl text-on-surface leading-relaxed max-w-2xl font-light opacity-90">
+                Sovereign Intelligence prioritizes engagements where regional complexity intersects with institutional policy and capital decisions.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-16">
+                <div>
+                    <h4 class="sans-label text-[10px] text-secondary mb-4">Market Entry Analysis</h4>
+                    <p class="text-on-surface-variant text-sm font-light leading-relaxed">Quantifying political risk and volatility in frontier corridors prior to commitment.</p>
+                </div>
+                <div>
+                    <h4 class="sans-label text-[10px] text-secondary mb-4">Investment Committees</h4>
+                    <p class="text-on-surface-variant text-sm font-light leading-relaxed">Providing deep-dive analytical support for institutional investment and risk boards.</p>
+                </div>
+                <div>
+                    <h4 class="sans-label text-[10px] text-secondary mb-4">Board Briefings</h4>
+                    <p class="text-on-surface-variant text-sm font-light leading-relaxed">Tailored geopolitical briefings for executive leadership on Pan-African alliances.</p>
+                </div>
+                <div>
+                    <h4 class="sans-label text-[10px] text-secondary mb-4">Crisis Support</h4>
+                    <p class="text-on-surface-variant text-sm font-light leading-relaxed">Direct analytical channel for rapid regional shifts or supply chain disruptions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Form -->
+    <section class="bg-surface-container-low px-12 py-32 border-y border-outline-variant/10" id="form">
+        <div class="max-w-4xl mx-auto bg-surface p-12 lg:p-24 border border-outline-variant/10 shadow-sm">
+            <div class="mb-20 text-center">
+                <h2 class="serif-display text-3xl mb-4">Request a Briefing</h2>
+                <p class="text-on-surface-variant text-sm font-light">Complete the form below to submit a briefing, advisory, media, or institutional request.</p>
+            </div>
+            <form class="space-y-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <div class="space-y-4">
+                        <label class="sans-label text-[10px] text-on-surface-variant">Full Name</label>
+                        <input class="w-full bg-transparent border-0 border-b border-outline-variant/40 focus:ring-0 focus:border-primary px-0 py-4 transition-colors text-sm font-light" placeholder="Institutional Representative" type="text"/>
+                    </div>
+                    <div class="space-y-4">
+                        <label class="sans-label text-[10px] text-on-surface-variant">Organization</label>
+                        <input class="w-full bg-transparent border-0 border-b border-outline-variant/40 focus:ring-0 focus:border-primary px-0 py-4 transition-colors text-sm font-light" placeholder="Entity Name" type="text"/>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <div class="space-y-4">
+                        <label class="sans-label text-[10px] text-on-surface-variant">Inquiry Type</label>
+                        <select class="w-full bg-transparent border-0 border-b border-outline-variant/40 focus:ring-0 focus:border-primary px-0 py-4 transition-colors text-sm font-light appearance-none cursor-pointer">
+                            <option>Intelligence Briefing</option>
+                            <option>Advisory Support</option>
+                            <option>Media Inquiry</option>
+                            <option>Institutional Matter</option>
+                        </select>
+                    </div>
+                    <div class="space-y-4">
+                        <label class="sans-label text-[10px] text-on-surface-variant">Region / Corridor</label>
+                        <input class="w-full bg-transparent border-0 border-b border-outline-variant/40 focus:ring-0 focus:border-primary px-0 py-4 transition-colors text-sm font-light" placeholder="e.g. SADC Mining Corridors" type="text"/>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <label class="sans-label text-[10px] text-on-surface-variant">Objective of Inquiry</label>
+                    <textarea class="w-full bg-transparent border-0 border-b border-outline-variant/40 focus:ring-0 focus:border-primary px-0 py-4 transition-colors text-sm font-light resize-none" placeholder="Detail the strategic context and specific deliverables required..." rows="4"></textarea>
+                </div>
+                <div class="pt-12">
+                    <button class="bg-primary text-on-primary px-16 py-6 sans-label text-[11px] hover:bg-secondary transition-all duration-300 w-full md:w-auto" type="submit">
+                        Submit Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Institutional Discipline -->
+    <section class="bg-primary text-on-primary px-12 py-28 flex flex-col md:flex-row items-center justify-between gap-16">
+        <div class="max-w-2xl">
+            <h3 class="serif-display text-3xl mb-8 italic font-light text-white">Institutional Discipline</h3>
+            <p class="text-white/60 text-lg leading-relaxed font-light">
+                Sovereign Intelligence operates with a selective review process. We prioritize inquiries that demonstrate a clear requirement for high-level geopolitical decision support over general market commentary.
+            </p>
+        </div>
+        <div class="h-px md:h-32 w-full md:w-px bg-white/10"></div>
+        <div class="md:text-right">
+            <p class="sans-label text-[10px] mb-4 text-white/40 tracking-[0.5em]">Institutional Review</p>
+            <p class="serif-display text-4xl text-secondary-container font-light">Request Review</p>
+        </div>
+    </section>
+
+    <!-- Final Action -->
+    <section class="bg-surface px-12 py-48 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="serif-display text-5xl md:text-6xl mb-10 leading-tight tracking-tight tight-headline">Start With a Relevant Inquiry</h2>
+            <p class="text-on-surface-variant font-light text-lg mb-16 max-w-2xl mx-auto">Request a briefing, advisory discussion, or institutional conversation grounded in regional intelligence.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-8">
+                <button class="bg-primary text-on-primary px-16 py-6 sans-label text-[11px] hover:bg-secondary transition-all duration-300">
+                    Request a Briefing
+                </button>
+                <button class="border border-outline-variant px-16 py-6 sans-label text-[11px] hover:bg-surface-container-low transition-all duration-300">
+                    Explore Intelligence
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

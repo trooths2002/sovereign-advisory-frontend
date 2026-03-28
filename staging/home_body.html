@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Intelligence | Home Artifact</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000101',
+                        secondary: '#745b22',
+                        surface: '#faf9f4',
+                        'on-surface-variant': '#44474a',
+                        'outline-variant': '#c5c6ca',
+                        'surface-container-low': '#f5f4ef',
+                        'surface-container-highest': '#e3e3de',
+                        'secondary-container': '#fedb95',
+                        'on-secondary-container': '#785f25',
+                    },
+                    fontFamily: {
+                        headline: ['Newsreader', 'serif'],
+                        body: ['Manrope', 'sans-serif'],
+                        label: ['Public Sans', 'sans-serif'],
+                    },
+                    borderRadius: { 'DEFAULT': '0px' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+
+<div class="artifact-container">
+    <!-- Hero Section -->
+    <header class="relative min-h-[80vh] flex flex-col justify-center px-8 md:px-24 py-32 overflow-hidden bg-surface">
+        <div class="absolute right-0 top-0 w-1/2 h-full opacity-[0.05] pointer-events-none">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDP3CCmsA01fPLJIXV9BbEsMdYOoZTnZXSVX1rpKgQ4bJfs6rBogrTpJs4mVl7Enaxt0AxNhvCzq3SkibctU7OEYHiJyxfmBeuq8J9p3o1j2SqqLSuEgJ7YAbmabrcgyXzBGIPiymGZazlhpxXGwJu3syjYeUyXPrqfiHLiGPMfPRm924VG0-tELrJ-_ZoxPsFy5NIHtaA8ek8heSF0yJden4GgibRuwMnSDDCBb19aCyGqiCfUXgLlurqJgDbbNDU65JtmeeVEHk" 
+                 alt="Strategic intelligence cartography" class="w-full h-full object-cover grayscale">
+        </div>
+        <div class="max-w-5xl relative z-10">
+            <span class="sans-label text-secondary mb-8 block text-[11px]">Strategic Foresight</span>
+            <h1 class="serif-display text-5xl md:text-[5.5rem] font-light leading-[1.05] text-primary mb-12 tracking-tight tight-headline">
+                Strategic Intelligence Across Africa’s Power, Markets, and Transitions
+            </h1>
+            <p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-3xl leading-relaxed mb-16">
+                Interpreting political risk, regional developments, security dynamics, and cross-border change for institutional decision-makers.
+            </p>
+            <div class="flex flex-wrap gap-6">
+                <button class="bg-primary text-on-primary px-10 py-5 sans-label text-[11px] uppercase tracking-[0.2em] hover:bg-on-surface-variant transition-colors">
+                    Request a Briefing
+                </button>
+                <button class="bg-surface-container-highest text-on-surface px-10 py-5 sans-label text-[11px] uppercase tracking-[0.2em] hover:bg-surface-container-high transition-colors">
+                    Explore Intelligence
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Editorial Strip -->
+    <section class="bg-primary text-on-primary py-4 px-8 md:px-24 border-y border-outline-variant/10">
+        <div class="flex items-center gap-12 overflow-x-auto no-scrollbar whitespace-nowrap">
+            <span class="sans-label text-[9px] text-secondary tracking-[0.3em]">Intelligence Stream:</span>
+            <div class="flex gap-10">
+                <a href="#" class="sans-label text-[9px] hover:text-secondary-container transition-colors">Assessments</a>
+                <a href="#" class="sans-label text-[9px] hover:text-secondary-container transition-colors">Forecasts</a>
+                <a href="#" class="sans-label text-[9px] hover:text-secondary-container transition-colors">Regional Notes</a>
+                <a href="#" class="sans-label text-[9px] hover:text-secondary-container transition-colors">Strategic Briefs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Paths -->
+    <section class="px-8 md:px-24 py-32 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="serif-display text-4xl mb-20 font-light border-b border-outline-variant/20 pb-8">Engagement Paths</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="space-y-8 p-10 bg-surface-container-low border border-outline-variant/10 group hover:border-secondary/30 transition-all">
+                    <h3 class="serif-display text-2xl group-hover:text-secondary transition-colors">Open Insights</h3>
+                    <p class="text-on-surface-variant leading-relaxed text-sm font-light">Public analysis, featured notes, and selected continental commentary.</p>
+                    <a href="#" class="sans-label text-[10px] text-secondary inline-block border-b border-secondary/20 pb-1">Explore Intelligence →</a>
+                </div>
+                <div class="space-y-8 p-10 bg-surface-container-low border border-outline-variant/10 group hover:border-secondary/30 transition-all">
+                    <h3 class="serif-display text-2xl group-hover:text-secondary transition-colors">Subscription Intelligence</h3>
+                    <p class="text-on-surface-variant leading-relaxed text-sm font-light">Recurring briefs, assessments, forecasts, and structured research access.</p>
+                    <a href="#" class="sans-label text-[10px] text-secondary inline-block border-b border-secondary/20 pb-1">Subscription Access →</a>
+                </div>
+                <div class="space-y-8 p-10 bg-surface-container-low border border-outline-variant/10 group hover:border-secondary/30 transition-all">
+                    <h3 class="serif-display text-2xl group-hover:text-secondary transition-colors">Bespoke Advisory</h3>
+                    <p class="text-on-surface-variant leading-relaxed text-sm font-light">Private briefings, executive support, scenario analysis, and tailored intelligence mandates.</p>
+                    <a href="#" class="sans-label text-[10px] text-secondary inline-block border-b border-secondary/20 pb-1">Request Advisory Support →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Coverage -->
+    <section class="bg-surface-container-low px-8 md:px-24 py-32 border-y border-outline-variant/10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20">
+            <div class="lg:col-span-4">
+                <h2 class="serif-display text-5xl font-light mb-8 leading-tight">Strategic Coverage</h2>
+                <p class="text-on-surface-variant leading-relaxed font-light">Our analytical mandate focuses on the critical intersections of governance, resource security, and continental economic architecture.</p>
+            </div>
+            <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-px bg-outline-variant/10 border border-outline-variant/10">
+                <div class="bg-surface p-12 hover:bg-surface-container transition-colors">
+                    <h4 class="serif-display text-xl mb-4">Political Risk</h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed font-light">Assessment of executive power dynamics, legislative stability, and bureaucratic risk in primary growth markets.</p>
+                </div>
+                <div class="bg-surface p-12 hover:bg-surface-container transition-colors">
+                    <h4 class="serif-display text-xl mb-4">Security Dynamics</h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed font-light">Technical analysis of regional stability, insurgency risks, and the impact of state security architecture.</p>
+                </div>
+                <!-- Extended items simplified for artifact length -->
+                <div class="bg-surface p-12 hover:bg-surface-container transition-colors">
+                    <h4 class="serif-display text-xl mb-4">Energy & Critical Minerals</h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed font-light">Tracking energy transition assets, critical mineral value chains, and resource sovereignty policy shifts.</p>
+                </div>
+                <div class="bg-surface p-12 hover:bg-surface-container transition-colors">
+                    <h4 class="serif-display text-xl mb-4">Trade Corridors & Logistics</h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed font-light">Analysis of trans-continental supply chain integrity, port infrastructure, and regional economic integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institutional Perspective -->
+    <section class="py-40 px-8 md:px-24 bg-surface text-center">
+        <div class="max-w-4xl mx-auto">
+            <span class="sans-label text-secondary mb-10 block text-[11px]">Institutional Perspective</span>
+            <div class="space-y-12">
+                <p class="serif-display text-3xl md:text-4xl text-primary leading-relaxed font-light italic">
+                    "The modern investment landscape across Africa requires strategic interpretation over fragmented updates. As jurisdictions transition and regional integration matures, the complexity of cross-border risk demands a synthetic analytical approach."
+                </p>
+                <div class="w-16 h-px bg-secondary/30 mx-auto"></div>
+                <p class="text-on-surface-variant font-light leading-relaxed max-w-2xl mx-auto">
+                    Sovereign Intelligence provides the strategic foresight necessary for institutional decision-makers to navigate volatility and identify durable growth pathways.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Serve -->
+    <section class="bg-primary text-on-primary py-32 px-8 md:px-24">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="serif-display text-4xl mb-24 font-light text-center">Who We Serve</h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div class="space-y-6 pt-8 border-t border-white/10 hover:border-secondary transition-colors">
+                    <h4 class="sans-label text-[10px] text-secondary">Investors</h4>
+                    <p class="text-xs text-white/60 leading-relaxed font-light">Interpreting political risk for capital protection and long-horizon deployment.</p>
+                </div>
+                <div class="space-y-6 pt-8 border-t border-white/10 hover:border-secondary transition-colors">
+                    <h4 class="sans-label text-[10px] text-secondary">Operators</h4>
+                    <p class="text-xs text-white/60 leading-relaxed font-light">Decision support for cross-border operations and site-specific security.</p>
+                </div>
+                <div class="space-y-6 pt-8 border-t border-white/10 hover:border-secondary transition-colors">
+                    <h4 class="sans-label text-[10px] text-secondary">Public Sector</h4>
+                    <p class="text-xs text-white/60 leading-relaxed font-light">Strategic foresight for regional bodies and development banks.</p>
+                </div>
+                <div class="space-y-6 pt-8 border-t border-white/10 hover:border-secondary transition-colors">
+                    <h4 class="sans-label text-[10px] text-secondary">Policy</h4>
+                    <p class="text-xs text-white/60 leading-relaxed font-light">High-context technical analysis for policy designers.</p>
+                </div>
+                <div class="space-y-6 pt-8 border-t border-white/10 hover:border-secondary transition-colors">
+                    <h4 class="sans-label text-[10px] text-secondary">Media</h4>
+                    <p class="text-xs text-white/60 leading-relaxed font-light">Specialized intelligence briefings for executive conferencia curation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-40 px-8 md:px-24 text-center bg-surface-container-low border-t border-outline-variant/10">
+        <h2 class="serif-display text-5xl md:text-7xl font-light mb-12 tracking-tight tight-headline">Secure Your Strategic Edge</h2>
+        <p class="text-xl text-on-surface-variant mb-16 max-w-2xl mx-auto font-light leading-relaxed">Access bespoke advisory, executive briefings, and recurring continental intelligence.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <button class="bg-primary text-on-primary px-12 py-5 sans-label text-[11px] hover:bg-on-surface-variant transition-colors">Request a Briefing</button>
+            <button class="bg-transparent border border-primary text-primary px-12 py-5 sans-label text-[11px] hover:bg-surface-container transition-colors">Subscription Access</button>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

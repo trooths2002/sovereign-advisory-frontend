@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article | Sovereign Intelligence Artifact</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000101',
+                        secondary: '#745b22',
+                        surface: '#faf9f4',
+                        'on-surface-variant': '#44474a',
+                        'outline-variant': '#c5c6ca',
+                        'surface-container-low': '#f5f4ef',
+                        'surface-container-high': '#e9e8e3',
+                        'surface-container-highest': '#e3e3de',
+                        'secondary-container': '#fedb95',
+                        'on-secondary-container': '#785f25',
+                        'secondary-fixed-dim': '#e4c27e',
+                    },
+                    fontFamily: {
+                        headline: ['Newsreader', 'serif'],
+                        body: ['Manrope', 'sans-serif'],
+                        label: ['Public Sans', 'sans-serif'],
+                    },
+                    borderRadius: { 'DEFAULT': '0px' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+
+<div class="artifact-container">
+    <!-- Article Header -->
+    <section class="max-w-[1920px] mx-auto px-8 md:px-24 pt-32 pb-16 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div class="lg:col-span-8">
+            <nav class="flex items-center gap-2 mb-10 sans-label text-[10px] text-on-surface-variant/60">
+                <span>Intelligence</span>
+                <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                <span>Assessments</span>
+                <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                <span class="text-secondary font-bold">Political Risk Outlook</span>
+            </nav>
+            <h1 class="serif-display text-5xl md:text-[5.5rem] font-medium leading-[1.05] text-primary mb-10 tight-headline">
+                Political Risk Outlook
+            </h1>
+            <p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-3xl leading-relaxed">
+                Institutional assessment of executive transitions and administrative continuity within West African high-sensitivity operating environments.
+            </p>
+        </div>
+        <div class="lg:col-span-4 bg-surface-container-low border border-outline-variant/20 overflow-hidden relative h-64 lg:h-80">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7PGSX6bev7_riwN5CI2KGCJUMyx_jvLNm5R7Yq0OMEl2y2v6jh6eCP69XUxHfXFBW42RLPl359FlV8yCK6mzriBNSaaqAMt9zMfokcVLoP-AjoviaeIumYOujrNM5igsOBW2E--41BcwmA1q4Wjthevcg9_0Hcgo1xig0-0kuFOj2Ik9-CdLdb6zaif35XiZbOg2jGCHOz9CMOzsE3LjE53tlxK16zUd7X1ZADT9EdKBc0e6yCKZbDljoo-3Wo9IaD8pDwsrpXZ8" 
+                 alt="Geographic Fragment" class="absolute inset-0 w-full h-full object-cover grayscale opacity-10 mix-blend-multiply">
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Meta Bar -->
+    <section class="w-full bg-surface-container-low border-y border-outline-variant/10 mb-24">
+        <div class="max-w-[1920px] mx-auto px-8 md:px-24 py-6 flex flex-wrap gap-x-16 gap-y-6 items-center">
+            <div class="flex flex-col gap-1.5">
+                <span class="sans-label text-[8px] text-on-surface-variant/50 tracking-[0.2em]">Format</span>
+                <span class="font-body text-[11px] font-bold uppercase tracking-widest text-primary">Assessment</span>
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <span class="sans-label text-[8px] text-on-surface-variant/50 tracking-[0.2em]">Topic</span>
+                <span class="font-body text-[11px] font-bold uppercase tracking-widest text-primary">Political Risk</span>
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <span class="sans-label text-[8px] text-on-surface-variant/50 tracking-[0.2em]">Region</span>
+                <span class="font-body text-[11px] font-bold uppercase tracking-widest text-primary">West Africa</span>
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <span class="sans-label text-[8px] text-on-surface-variant/50 tracking-[0.2em]">Horizon</span>
+                <span class="font-body text-[11px] font-bold uppercase tracking-widest text-primary">Medium-Term</span>
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <span class="sans-label text-[8px] text-on-surface-variant/50 tracking-[0.2em]">Updated</span>
+                <span class="font-body text-[11px] font-bold uppercase tracking-widest text-primary">Jan 24, 2026</span>
+            </div>
+            <div class="ml-auto flex gap-10">
+                <button class="text-on-surface-variant/60 hover:text-primary transition-colors flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[18px]">download</span>
+                    <span class="sans-label text-[9px]">PDF</span>
+                </button>
+                <button class="text-on-surface-variant/60 hover:text-primary transition-colors flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[18px]">share</span>
+                    <span class="sans-label text-[9px]">Share</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <section class="max-w-[1920px] mx-auto px-8 md:px-24 grid grid-cols-1 lg:grid-cols-12 gap-24 mb-32">
+        <!-- Main Content -->
+        <article class="lg:col-span-8 space-y-24">
+            <!-- Executive Summary -->
+            <div class="bg-surface-container p-12 md:p-16 border-l-4 border-secondary">
+                <h2 class="sans-label text-secondary mb-12 text-sm tracking-[0.3em]">Executive Summary</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                    <div class="space-y-3">
+                        <span class="sans-label text-[9px] text-primary/40">01 Fiscal Policy Shift</span>
+                        <p class="text-sm text-on-surface leading-relaxed font-light">Legislative indicators signal a pivot toward infrastructure-led growth, prioritizing long-term capital deployment over immediate liquidity.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="sans-label text-[9px] text-primary/40">02 Regulatory Continuity</span>
+                        <p class="text-sm text-on-surface leading-relaxed font-light">Key administrative bodies maintain high stability, ensuring predictable licensing and operational compliance for strategic sectors.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="sans-label text-[9px] text-primary/40">03 Corridor Stability</span>
+                        <p class="text-sm text-on-surface leading-relaxed font-light">Bilateral trade protocols remain resilient, stabilizing cross-border logistics and reducing regional transit friction.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="sans-label text-[9px] text-primary/40">04 Executive Realignment</span>
+                        <p class="text-sm text-on-surface leading-relaxed font-light">Cabinet technocracy has consolidated authority within core ministries, specifically focused on sovereign debt management.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Body Sections -->
+            <div class="max-w-3xl space-y-20">
+                <section>
+                    <h3 class="serif-display text-4xl mb-8 text-primary">Overview</h3>
+                    <p class="text-lg text-on-surface leading-relaxed font-light">
+                        Data tracking across the reporting period indicates a transition toward administrative pragmatism. Fiscal authority is increasingly concentrated within central executive bodies, a strategic move aimed at stabilizing sovereign credit ratings and insulating budgetary cycles from electoral volatility.
+                    </p>
+                </section>
+
+                <!-- Key Judgment -->
+                <div class="border-y border-outline-variant/20 py-16">
+                    <span class="sans-label text-secondary mb-8 block text-xs tracking-[0.4em]">Key Judgment</span>
+                    <p class="serif-display text-4xl md:text-5xl font-medium leading-tight text-primary italic">
+                        "Technocratic consolidation across core ministries effectively insulates sovereign functions from political cycles, prioritizing institutional longevity over short-term policy messaging."
+                    </p>
+                </div>
+
+                <section>
+                    <h3 class="serif-display text-4xl mb-10 text-primary">Current Signals</h3>
+                    <div class="space-y-12">
+                        <div class="flex gap-8 group">
+                            <span class="material-symbols-outlined text-secondary mt-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            <div>
+                                <h4 class="font-bold text-xl mb-3 text-primary">Centralized Policy Control</h4>
+                                <p class="text-on-surface-variant leading-relaxed font-light">The influence of economic advisory boards has expanded, signaling a shift toward multilateral engagement and structured debt sustainability.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-8 group">
+                            <span class="material-symbols-outlined text-secondary mt-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            <div>
+                                <h4 class="font-bold text-xl mb-3 text-primary">Administrative Oversight</h4>
+                                <p class="text-on-surface-variant leading-relaxed font-light">Enhanced extraction-sector auditing protocols increase regulatory visibility for all regional maritime and terrestrial operators.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Strategic Implications -->
+                <div class="bg-primary text-on-primary p-12 md:p-16 relative overflow-hidden">
+                    <span class="sans-label text-secondary-fixed-dim mb-10 block text-xs tracking-[0.4em]">Strategic Implications</span>
+                    <p class="text-2xl font-light mb-16 leading-relaxed text-white/90">
+                        Institutional partners should prioritize direct engagement with central ministerial bodies. Current executive concentration renders localized or peripheral advocacy less effective for high-value strategic entry.
+                    </p>
+                    <div class="h-px bg-white/10 mb-12 w-full"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <span class="sans-label text-[9px] text-white/40 mb-3 block">Recommended Action</span>
+                            <p class="text-white text-sm font-bold tracking-wide">Audit logistics resilience for Corridor 4B.</p>
+                        </div>
+                        <div>
+                            <span class="sans-label text-[9px] text-white/40 mb-3 block">Decision Horizon</span>
+                            <p class="text-white text-sm font-bold tracking-wide">Q1–Q2 (Immediate)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section>
+                    <h3 class="serif-display text-4xl mb-8 text-primary">Risk Considerations</h3>
+                    <p class="text-lg text-on-surface leading-relaxed font-light">
+                        While institutional stability remains the baseline trend, inflationary pressure on key transit hubs persists. Stakeholders are advised to monitor currency settlement protocols within emerging digital corridors as potential friction points for cross-border operations.
+                    </p>
+                </section>
+            </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4 space-y-16">
+            <div class="bg-surface-container-low p-10 border border-outline-variant/10">
+                <div class="space-y-12">
+                    <div>
+                        <h4 class="sans-label text-[9px] text-on-surface-variant/50 mb-6 tracking-[0.3em]">Related Regions</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-surface-container-highest px-4 py-2 font-label text-[9px] tracking-widest text-primary font-bold">Nigeria</span>
+                            <span class="bg-surface-container-highest px-4 py-2 font-label text-[9px] tracking-widest text-primary font-bold">Ghana</span>
+                            <span class="bg-surface-container-highest px-4 py-2 font-label text-[9px] tracking-widest text-primary font-bold">Ivory Coast</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="sans-label text-[9px] text-on-surface-variant/50 mb-6 tracking-[0.3em]">Primary Themes</h4>
+                        <div class="space-y-6">
+                            <a href="#" class="block text-sm font-bold text-primary hover:text-secondary transition-colors border-b border-outline-variant/10 pb-4">Extractive Governance</a>
+                            <a href="#" class="block text-sm font-bold text-primary hover:text-secondary transition-colors border-b border-outline-variant/10 pb-4">Sovereign Debt Stability</a>
+                            <a href="#" class="block text-sm font-bold text-primary hover:text-secondary transition-colors border-b border-outline-variant/10 pb-4">Trade Corridor Logistics</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-primary text-on-primary p-12 group cursor-pointer border border-white/5 hover:bg-black transition-colors">
+                    <h4 class="serif-display text-3xl font-light mb-4">Subscription Intelligence</h4>
+                    <p class="text-white/40 text-[12px] leading-relaxed mb-10 font-light">Full access to sovereign tracking terminals and recurring analytical signals.</p>
+                    <span class="sans-label text-secondary text-[10px] group-hover:translate-x-2 transition-transform inline-block">Subscription Access →</span>
+                </div>
+                <div class="bg-surface-container p-12 group cursor-pointer border border-outline-variant/20 hover:border-outline-variant/50 transition-colors">
+                    <h4 class="serif-display text-3xl font-light mb-4">Request Advisory Support</h4>
+                    <p class="text-on-surface-variant text-[12px] leading-relaxed mb-10 font-light">Bespoke assessments for complex entry points and operational shifts.</p>
+                    <span class="sans-label text-secondary text-[10px] group-hover:translate-x-2 transition-transform inline-block">Inquire →</span>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <!-- Related Intelligence -->
+    <section class="max-w-[1920px] mx-auto px-8 md:px-24 py-32 border-t border-outline-variant/10">
+        <h3 class="sans-label text-secondary mb-20 text-sm tracking-[0.4em]">Related Intelligence</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div class="group cursor-pointer">
+                <div class="aspect-video bg-surface-container-low border border-outline-variant/10 mb-8 overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCOd_YFRnXs81kMcPiH7VDm6WBedRwRgVoLlyoGtRn04CO78EIDXwWfqn31w0Hsa73h9ac0O9-1JooCVfj1oNHcexGxwXnfWLuPvW-YVLLCQzHwhAS64ZU_wVhW9qqbe34MF50NQbZq3GM3xOfLK0iD5mXlYXoA40SSh1s6Sp_a3uaZn5eZO1OrNZil5PmYeAvW2Ljf7wtRyhY0wqHOhAuNa10nUqKQ9graDqo48I-rwIILUHnIZ6rhyJ0B1Io6Cy8PQxsP5F32-s" 
+                         alt="Thumbnail" class="w-full h-full object-cover grayscale opacity-10 group-hover:opacity-20 transition-opacity">
+                </div>
+                <div class="flex gap-4 mb-4 items-center">
+                    <span class="sans-label text-[8px] text-secondary tracking-widest">Forecast</span>
+                    <div class="w-1 h-1 rounded-full bg-outline-variant/30"></div>
+                    <span class="sans-label text-[8px] text-on-surface-variant/40">Long-Term</span>
+                </div>
+                <h4 class="serif-display text-2xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors">Regional Transition Scenario</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed font-light line-clamp-2">Analysis of leadership succession frameworks and administrative continuity protocols across the ECOWAS bloc.</p>
+            </div>
+            <!-- More items simplified for length -->
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="bg-primary text-on-primary py-40 px-8 md:px-24 text-center border-t border-white/10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="serif-display text-4xl md:text-7xl font-bold mb-10 leading-tight tracking-tight tight-headline">Access Decision-Useful <span class="text-secondary italic">Intelligence</span></h2>
+            <p class="text-white/40 text-xl font-light mb-16 max-w-2xl mx-auto">For recurring research access, executive briefings, and tailored geopolitical support.</p>
+            <div class="flex flex-wrap justify-center gap-8">
+                <button class="bg-secondary text-primary px-16 py-6 sans-label text-[11px] font-bold tracking-[0.25em] hover:bg-secondary-container transition-colors">Subscription Access</button>
+                <button class="bg-transparent border border-white/20 text-on-primary px-16 py-6 sans-label text-[11px] font-bold tracking-[0.25em] hover:bg-white/5 transition-colors">Request a Briefing</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
