@@ -130,13 +130,20 @@
 
     <script>
         // --- DEPLOYMENT CONFIGURATION ---
-        // Replace this URL with your active n8n loca.lt tunnel Webhook URL
-        const N8N_WEBHOOK_URL = "http://localhost:5678/webhook-test/advisory-intake";
+        // Set a live intake endpoint only through a controlled, non-public release process.
+        const N8N_WEBHOOK_URL = "";
 
         document.getElementById('advisory-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
             const status = document.getElementById('status');
+            const webhookUrl = typeof N8N_WEBHOOK_URL === 'string' ? N8N_WEBHOOK_URL.trim() : '';
+
+            if (!webhookUrl) {
+                status.innerText = 'Secure intake is temporarily unavailable. Please contact the operator directly.';
+                status.style.color = '#ff3333';
+                return;
+            }
             
             btn.innerText = 'TRANSMITTING...';
             btn.disabled = true;
@@ -150,7 +157,7 @@
             };
 
             try {
-                const response = await fetch(N8N_WEBHOOK_URL, {
+                const response = await fetch(webhookUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -170,7 +177,7 @@
                 console.error(err);
                 btn.innerText = 'TRANSMISSION FAILED';
                 btn.disabled = false;
-                status.innerText = 'Error connecting to secure node. Verify tunnel.';
+                status.innerText = 'Error connecting to secure intake endpoint. Contact the operator.';
                 status.style.color = '#ff3333';
             }
         });
